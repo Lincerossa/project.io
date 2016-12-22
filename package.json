@@ -1,0 +1,29 @@
+{
+  "name": "project.io",
+  "version": "1.0.0",
+  "description": "firstpush",
+  "main": "gulpfile.js",
+  "scripts": {
+
+    "precompila":"mkdir -p build/js/min",
+    "compila": "browserify src/js/main.js -o build/js/main.js -t [ babelify ]",
+    "postcompila": "uglifyjs build/js/main.js -o build/js/min//main.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lincerossa/project.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lincerossa/project.io/issues"
+  },
+  "homepage": "https://github.com/Lincerossa/project.io#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "uglify-js": "^2.7.5"
+  }
+}
