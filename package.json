@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "directory": "mkdir -p build/js/min && mkdir -p build/css/min",
-    "compileJs": "browserify src/js/main.js -o build/js/main.js -t [ babelify ] && uglifyjs build/js/main.js -o build/js/min//main.js",
+    "compileJs": "browserify src/js/main.js -o build/js/main.js -t [ babelify ] && uglifyjs build/js/main.js -o build/js/min/main.js",
     "compileLess": "lessc src/less/main.less build/css/main.css && uglifycss build/css/main.css > build/css/min/main.css",
     "start": "npm run directory && npm run compileJs && npm run compileLess"
   },
