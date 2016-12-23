@@ -6338,60 +6338,24 @@ exports.insert = function (css) {
 'use strict';
 
 var Vue = require('vue');
-var App = require('./view/app.vue');
+var Header = require('./view/containers/Header.vue');
+var Content = require('./view/containers/Content.vue');
 
 new Vue({
-  el: '#app',
+  el: 'header',
   render: function render(createElement) {
-    return createElement(App);
+    return createElement(Header);
   }
 });
 
-},{"./view/app.vue":6,"vue":3}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".red[data-v-6ef7c2be] {\n  color: #f00;\n}\n.red-el[data-v-6ef7c2be] {\n  color: red;\n}")
-;(function(){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+new Vue({
+  el: '#page-container',
+  render: function render(createElement) {
+    return createElement(Content);
+  }
 });
 
-var _Menu = require('./components/Menu.vue');
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  data: function data() {
-    return {
-      msg: 'lorem ipsum'
-    };
-  },
-
-  components: {
-    Menu: _Menu2.default
-  }
-};
-})()
-if (module.exports.__esModule) module.exports = module.exports.default
-var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',[_c('Menu'),_vm._v(" "),_c('h1',{staticClass:"red-el"},[_vm._v(_vm._s(_vm.msg))]),_vm._v(" "),_c('p',[_vm._v(" asdjnasidasnd")])])}
-__vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-6ef7c2be"
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  module.hot.dispose(__vueify_style_dispose__)
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6ef7c2be", __vue__options__)
-  } else {
-    hotAPI.reload("data-v-6ef7c2be", __vue__options__)
-  }
-})()}
-},{"./components/Menu.vue":7,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
+},{"./view/containers/Content.vue":7,"./view/containers/Header.vue":8,"vue":3}],6:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -6416,9 +6380,86 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f9622c50", __vue__options__)
+    hotAPI.createRecord("data-v-53bdabf6", __vue__options__)
   } else {
-    hotAPI.reload("data-v-f9622c50", __vue__options__)
+    hotAPI.reload("data-v-53bdabf6", __vue__options__)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2}]},{},[5]);
+},{"vue":3,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".red[data-v-2ab48ee8] {\n  color: #f00;\n}\n.red-el[data-v-2ab48ee8] {\n  color: red;\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      msg: 'lorem ipsum'
+    };
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-container"},[_vm._v("\n"+_vm._s(_vm.msg)+"\n")])}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-2ab48ee8"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2ab48ee8", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-2ab48ee8", __vue__options__)
+  }
+})()}
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".red[data-v-2348a54a] {\n  color: #f00;\n}\n.red-el[data-v-2348a54a] {\n  color: red;\n}")
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _MenuHeader = require('../components/MenuHeader.vue');
+
+var _MenuHeader2 = _interopRequireDefault(_MenuHeader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  data: function data() {
+    return {
+      msg: 'lorem ipsum'
+    };
+  },
+
+  components: {
+    MenuHeader: _MenuHeader2.default
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('header',[_c('MenuHeader')])}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-2348a54a"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2348a54a", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-2348a54a", __vue__options__)
+  }
+})()}
+},{"../components/MenuHeader.vue":6,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}]},{},[5]);

@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "mkdir -p build/js/min && mkdir -p build/css/min",
     "start": "lessc src/less/index.less build/css/index.css && uglifycss build/css/index.css> build/css/min/index.css",
-    "poststart": "browserify -t vueify -e src/js/main.js -o build/js/main.js -t [ babelify ] && uglifyjs build/js/main.js -o test/min/main.js "
+    "poststart": "browserify -t vueify -e src/js/main.js -o build/js/main.js -t [ babelify ] && uglifyjs build/js/main.js -o build/js/min/main.js "
   },
   "repository": {
     "type": "git",
