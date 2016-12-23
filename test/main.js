@@ -6377,7 +6377,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',[_c('Menu'),_vm._v(" "),_c('h1',{staticClass:"red-el"},[_vm._v(_vm._s(_vm.msg))]),_vm._v(" "),_c('p',[_vm._v(" asdjnasidasnd")])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',[_c('Menu',[_vm._v("AS")]),_vm._v(" "),_c('h1',{staticClass:"red-el"},[_vm._v(_vm._s(_vm.msg))]),_vm._v(" "),_c('p',[_vm._v(" asdjnasidasnd")])])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-6ef7c2be"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")

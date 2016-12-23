@@ -1,12 +1,9 @@
-require('./modules/test.js');
+var Vue = require('vue');
+var App = require('./view/app.vue')
 
-let ciao = "es2016";
-
-console.log("ciao")
-
-let app = new Vue({
-	el:"#application",
-	data:{
-		message:"ciao"
-	}
+new Vue({
+  el: '#app',
+  render: function (createElement) {
+    return createElement(App)
+  }
 })
