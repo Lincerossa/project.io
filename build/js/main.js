@@ -6355,7 +6355,8 @@ new Vue({
   }
 });
 
-},{"./view/containers/Content.vue":7,"./view/containers/Header.vue":8,"vue":3}],6:[function(require,module,exports){
+},{"./view/containers/Content.vue":8,"./view/containers/Header.vue":9,"vue":3}],6:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("nav[data-v-53bdabf6] {\n  border: 1px solid #505050;\n  height: 60px;\n  background-color: #f5f5f5;\n}\nnav ul[data-v-53bdabf6] {\n  list-style: none;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nnav ul li[data-v-53bdabf6] {\n  float: left;\n}\nnav ul li a[data-v-53bdabf6] {\n  text-align: center;\n  width: 100%;\n  display: block;\n  border: 1px solid #505050;\n}")
 ;(function(){
 'use strict';
 
@@ -6365,7 +6366,48 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   data: function data() {
     return {
-      link: 'lorem ipsum'
+      items: [{
+        link: 'http://www.prestiti.supermoney.eu',
+        text: 'Prestiti',
+        subMenu: [{
+          subLink: 'http://www.prestiti.supermoney.eu/prestiti-online/',
+          subText: "prestiti sub1"
+        }, {
+          subLink: 'http://www.prestiti.supermoney.eu/prestiti-online/',
+          subText: "prestiti sub2"
+        }, {
+          subLink: 'http://www.prestiti.supermoney.eu/prestiti-online/',
+          subText: "prestiti sub3"
+        }]
+      }, {
+        link: 'http://www.energia.supermoney.eu',
+        text: 'Energia',
+        subMenu: [{
+          subLink: 'http://www.energia.supermoney.eu/energia-online/',
+          subText: "energia sub1"
+        }, {
+          subLink: 'http://www.energia.supermoney.eu/energia-online/',
+          subText: "energia sub2"
+        }, {
+          subLink: 'http://www.energia.supermoney.eu/energia-online/',
+          subText: "energia sub3"
+        }, {
+          subLink: 'http://www.energia.supermoney.eu/energia-online/',
+          subText: "energia sub4"
+        }]
+      }, {
+        link: 'http://www.mutui.supermoney.eu',
+        text: 'Mutui'
+      }, {
+        link: 'http://www.telefonia.supermoney.eu',
+        text: 'Telefonia'
+      }, {
+        link: 'http://www.assicurazione-auto.supermoney.eu',
+        text: 'Assicurazione auto'
+      }, {
+        link: 'http://www.paytv.supermoney.eu',
+        text: 'Pay Tv'
+      }]
     };
   }
 };
@@ -6373,53 +6415,96 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',[_c('nav',[_c('ul',[_c('li',[_vm._v("asd"+_vm._s(_vm.link))])])])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('nav',[_c('ul',_vm._l((_vm.items),function(item){return _c('li',{staticClass:"[ col-xs-2 ]"},[_c('a',{attrs:{"href":item.link}},[_vm._v(_vm._s(item.text))]),_vm._v(" "),_c('ul',_vm._l((item.subMenu),function(item){return _c('li',[_c('a',{attrs:{"href":item.subLink}},[_vm._v(_vm._s(item.subText))])])}))])}))])}
 __vue__options__.staticRenderFns = []
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-53bdabf6", __vue__options__)
-  } else {
-    hotAPI.reload("data-v-53bdabf6", __vue__options__)
-  }
-})()}
-},{"vue":3,"vue-hot-reload-api":2}],7:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".red[data-v-2ab48ee8] {\n  color: #f00;\n}\n.red-el[data-v-2ab48ee8] {\n  color: red;\n}")
-;(function(){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  data: function data() {
-    return {
-      msg: 'lorem ipsum'
-    };
-  }
-};
-})()
-if (module.exports.__esModule) module.exports = module.exports.default
-var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-container"},[_vm._v("\n"+_vm._s(_vm.msg)+"\n")])}
-__vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-2ab48ee8"
+__vue__options__._scopeId = "data-v-53bdabf6"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
+    hotAPI.createRecord("data-v-53bdabf6", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-53bdabf6", __vue__options__)
+  }
+})()}
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".page-home[data-v-18496001] {\n  color: red;\n}")
+;(function(){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      test: "lorem ipsum"
+    };
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-home"},[_vm._v("\n  "+_vm._s(_vm.test)+"}\n")])}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-18496001"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-18496001", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-18496001", __vue__options__)
+  }
+})()}
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
+;(function(){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _PageContent = require('../components/PageContent.vue');
+
+var _PageContent2 = _interopRequireDefault(_PageContent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  data: function data() {
+    return {
+      msg: 'lorem ipsum'
+    };
+  },
+
+  components: {
+    PageContent: _PageContent2.default
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-container"},[_c('PageContent')])}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
     hotAPI.createRecord("data-v-2ab48ee8", __vue__options__)
   } else {
     hotAPI.reload("data-v-2ab48ee8", __vue__options__)
   }
 })()}
-},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".red[data-v-2348a54a] {\n  color: #f00;\n}\n.red-el[data-v-2348a54a] {\n  color: red;\n}")
+},{"../components/PageContent.vue":7,"vue":3,"vue-hot-reload-api":2}],9:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("header[data-v-2348a54a] {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  right: 0;\n}")
 ;(function(){
 'use strict';
 
@@ -6434,12 +6519,6 @@ var _MenuHeader2 = _interopRequireDefault(_MenuHeader);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  data: function data() {
-    return {
-      msg: 'lorem ipsum'
-    };
-  },
-
   components: {
     MenuHeader: _MenuHeader2.default
   }

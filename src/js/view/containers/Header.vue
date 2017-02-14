@@ -7,26 +7,21 @@
 
 <script>
 
-import MenuHeader from '../components/MenuHeader.vue';
+  import MenuHeader from '../components/MenuHeader.vue';
 
-export default {
-  data () {
-    return {
-      msg: 'lorem ipsum'
+  export default {
+    components: {
+      MenuHeader
     }
-  },
-  components: {
-    MenuHeader
   }
-}
 </script>
 
 <style scoped lang="less">
-.red{  
-  color: #f00;
-
-  &-el{
-  color:red
+  header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
   }
-}
 </style>
