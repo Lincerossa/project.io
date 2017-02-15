@@ -2,15 +2,12 @@
     <nav>
       <ul>
         <li class="[ col-xs-2 ]" v-for="item in items">
-
           <a :href='item.link'>{{ item.text }}</a>
-
           <ul class="row">
             <li v-for="item in item.subMenu">
               <a :href='item.subLink'>{{ item.subText }}</a>
             </li>
           </ul>
-
         </li>      
       </ul>
     </nav>
@@ -96,6 +93,7 @@ export default {
 
 nav{
   height: 50px;
+  margin-top: 65px;
 
   ul{
     list-style:none;

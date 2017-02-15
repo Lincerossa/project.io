@@ -2,7 +2,6 @@
     <header>
       <HeaderMenu></HeaderMenu>
       <HeaderFixed></HeaderFixed>
-      <p>Qualcosa sotto</p>
     </header>
 </template>
 

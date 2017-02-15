@@ -6569,11 +6569,11 @@ window.onload = function (e) {
 };
 
 },{"./view/containers/Content.vue":9,"./view/containers/Header.vue":10,"vue":3}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".heder-fixed[data-v-10d8837e] {\n  display: fixed;\n  top: 0;\n  height: 50px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid grey;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header-fixed[data-v-10d8837e] {\n  position: fixed;\n  top: 0;\n  height: 50px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  justify-content: space-around;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"header-fixed"},[_c('p',[_vm._v("questo resta fisso")])])}]
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"header-fixed"},[_c('img',{attrs:{"src":"/project.io/static/img/logo.jpg"}}),_vm._v(" "),_c('p',[_vm._v("altro testo")]),_vm._v(" "),_c('p',[_vm._v("finale")])])}]
 __vue__options__._scopeId = "data-v-10d8837e"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -6587,7 +6587,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 },{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("nav[data-v-ff91f276] {\n  height: 50px;\n}\nnav ul[data-v-ff91f276] {\n  list-style: none;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nnav ul li[data-v-ff91f276] {\n  position: relative;\n  float: left;\n  padding: 0;\n  border: 1px solid transparent;\n}\nnav ul li:hover ul[data-v-ff91f276] {\n  display: block;\n}\nnav ul li a[data-v-ff91f276] {\n  text-align: center;\n  width: 100%;\n  display: block;\n  border: 1px solid #505050;\n}\nnav ul li ul[data-v-ff91f276] {\n  position: absolute;\n  left: 0;\n  display: none;\n  width: 100%;\n}\nnav ul li ul a[data-v-ff91f276] {\n  text-align: left;\n}\nnav ul li ul li[data-v-ff91f276] {\n  float: none;\n  width: 100%;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("nav[data-v-ff91f276] {\n  height: 50px;\n  margin-top: 65px;\n}\nnav ul[data-v-ff91f276] {\n  list-style: none;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nnav ul li[data-v-ff91f276] {\n  position: relative;\n  float: left;\n  padding: 0;\n  border: 1px solid transparent;\n}\nnav ul li:hover ul[data-v-ff91f276] {\n  display: block;\n}\nnav ul li a[data-v-ff91f276] {\n  text-align: center;\n  width: 100%;\n  display: block;\n  border: 1px solid #505050;\n}\nnav ul li ul[data-v-ff91f276] {\n  position: absolute;\n  left: 0;\n  display: none;\n  width: 100%;\n}\nnav ul li ul a[data-v-ff91f276] {\n  text-align: left;\n}\nnav ul li ul li[data-v-ff91f276] {\n  float: none;\n  width: 100%;\n}")
 ;(function(){
 'use strict';
 
@@ -6762,7 +6762,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('header',[_c('HeaderMenu'),_vm._v(" "),_c('HeaderFixed'),_vm._v(" "),_c('p',[_vm._v("Qualcosa sotto")])],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('header',[_c('HeaderMenu'),_vm._v(" "),_c('HeaderFixed')],1)}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

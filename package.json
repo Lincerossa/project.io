@@ -26,8 +26,6 @@
     "less": "^2.7.1",
     "uglify-js": "^2.7.5",
     "vue": "^2.1.10",
-    "vue-server-renderer": "^2.1.10",
-    "vue-template-compiler": "^2.1.10",
     "vueify": "^9.4.0"
   }
 }
