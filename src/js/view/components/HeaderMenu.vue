@@ -5,7 +5,7 @@
 
           <a :href='item.link'>{{ item.text }}</a>
 
-          <ul>
+          <ul class="row">
             <li v-for="item in item.subMenu">
               <a :href='item.subLink'>{{ item.subText }}</a>
             </li>
@@ -26,7 +26,7 @@ export default {
           text: 'Prestiti',
           subMenu: [
             { 
-              subLink: 'http://www.prestiti.supermoney.eu/prestiti-online/', 
+              subLink: '/project.io/location/prestiti/index.html', 
               subText:"prestiti sub1"  
             },
 
@@ -95,9 +95,7 @@ export default {
 <style scoped lang="less">
 
 nav{
-  border: 1px solid #505050;
-  height: 60px;
-  background-color: #f5f5f5;
+  height: 50px;
 
   ul{
     list-style:none;
@@ -105,14 +103,32 @@ nav{
     margin: 0;
     padding: 0;
     li{
-
+      position: relative;
       float:left;
-      
+      padding: 0;
+      border: 1px solid transparent;
+      &:hover ul{
+        display: block;
+      }
       a{
         text-align:center;
         width: 100%;
         display: block;
         border: 1px solid #505050;
+      }
+
+      ul{
+        position: absolute;
+        left: 0;
+        display: none;
+        width: 100%;
+        a{
+          text-align: left;
+        }
+        li{
+          float: none;
+          width: 100%;
+        }
       }
     }
   }

@@ -1,27 +1,22 @@
 <template>
     <header>
-      <MenuHeader></MenuHeader>
+      <HeaderMenu></HeaderMenu>
+      <HeaderFixed></HeaderFixed>
+      <p>Qualcosa sotto</p>
     </header>
 </template>
 
 
 <script>
 
-  import MenuHeader from '../components/MenuHeader.vue';
+  import HeaderMenu from '../components/HeaderMenu.vue';
+  import HeaderFixed from '../components/HeaderFixed.vue';
 
   export default {
     components: {
-      MenuHeader
+      HeaderMenu,
+      HeaderFixed
     }
   }
 </script>
 
-<style scoped lang="less">
-  header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
-</style>
