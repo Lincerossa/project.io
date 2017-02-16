@@ -1,8 +1,8 @@
 <template>
-    <nav>
+    <nav >
       <ul>
         <li class="[ col-xs-2 ]" v-for="item in items">
-          <a :href='item.link'>{{ item.text }}</a>
+          <a  :href='item.link'>{{ item.text }}</a>
           <ul class="row">
             <li v-for="item in item.subMenu">
               <a :href='item.subLink'>{{ item.subText }}</a>
@@ -92,13 +92,16 @@ export default {
 <style scoped lang="less">
 
 nav{
-  height: 50px;
-  margin-top: 65px;
+  height: auto;
+  position: absolute;
+  width: 100%;
+  top: 65px;
 
   ul{
     list-style:none;
     height: 100%;
     margin: 0;
+
     padding: 0;
     li{
       position: relative;
@@ -109,6 +112,7 @@ nav{
         display: block;
       }
       a{
+         background-color: white;
         text-align:center;
         width: 100%;
         display: block;

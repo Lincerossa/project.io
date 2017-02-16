@@ -1,164 +1,47 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // shim for using process in browser
+
 var process = module.exports = {};
 
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
+process.nextTick = (function () {
+    var canSetImmediate = typeof window !== 'undefined'
+    && window.setImmediate;
+    var canPost = typeof window !== 'undefined'
+    && window.postMessage && window.addEventListener
+    ;
 
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
+    if (canSetImmediate) {
+        return function (f) { return window.setImmediate(f) };
     }
 
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
+    if (canPost) {
+        var queue = [];
+        window.addEventListener('message', function (ev) {
+            var source = ev.source;
+            if ((source === window || source === null) && ev.data === 'process-tick') {
+                ev.stopPropagation();
+                if (queue.length > 0) {
+                    var fn = queue.shift();
+                    fn();
+                }
             }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
+        }, true);
 
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
+        return function nextTick(fn) {
+            queue.push(fn);
+            window.postMessage('process-tick', '*');
+        };
     }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
 
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
+    return function nextTick(fn) {
+        setTimeout(fn, 0);
+    };
+})();
+
 process.title = 'browser';
 process.browser = true;
 process.env = {};
 process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
 
 function noop() {}
 
@@ -172,13 +55,13 @@ process.emit = noop;
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
-};
+}
 
+// TODO(shtylman)
 process.cwd = function () { return '/' };
 process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
-process.umask = function() { return 0; };
 
 },{}],2:[function(require,module,exports){
 var Vue // late bind
@@ -6517,8 +6400,8 @@ setTimeout(function () {
 
 module.exports = Vue$2;
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":1}],4:[function(require,module,exports){
+}).call(this,require("b55mWE"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"b55mWE":1}],4:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -6544,50 +6427,33 @@ exports.insert = function (css) {
 }
 
 },{}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
-window.onload = function (e) {
-	//This is the main VueJS app file.
-	//This file renders the vueJs Vue, injecting it into any page
-	var Vue = require('vue');
-	var Header = require('./view/containers/Header.vue');
-	var Content = require('./view/containers/Content.vue');
+require('./vue/vue.js');
 
-	new Vue({
-		el: 'header',
-		render: function render(createElement) {
-			return createElement(Header);
-		}
-	});
+var ciao = "ciaO";
+console.log(ciao + " -->");
 
-	new Vue({
-		el: '#page-container',
-		render: function render(createElement) {
-			return createElement(Content);
-		}
-	});
-};
-
-},{"./view/containers/Content.vue":9,"./view/containers/Header.vue":10,"vue":3}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header-fixed[data-v-10d8837e] {\n  position: fixed;\n  top: 0;\n  height: 50px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  justify-content: space-around;\n}")
+},{"./vue/vue.js":11}],6:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header-fixed[data-v-21327461] {\n  position: fixed;\n  top: 0;\n  height: 50px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  justify-content: space-around;\n}")
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _vm._m(0)}
 __vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"header-fixed"},[_c('img',{attrs:{"src":"/project.io/static/img/logo.jpg"}}),_vm._v(" "),_c('p',[_vm._v("altro testo")]),_vm._v(" "),_c('p',[_vm._v("finale")])])}]
-__vue__options__._scopeId = "data-v-10d8837e"
+__vue__options__._scopeId = "data-v-21327461"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-10d8837e", __vue__options__)
+    hotAPI.createRecord("data-v-21327461", __vue__options__)
   } else {
-    hotAPI.reload("data-v-10d8837e", __vue__options__)
+    hotAPI.rerender("data-v-21327461", __vue__options__)
   }
 })()}
 },{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("nav[data-v-ff91f276] {\n  height: 50px;\n  margin-top: 65px;\n}\nnav ul[data-v-ff91f276] {\n  list-style: none;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nnav ul li[data-v-ff91f276] {\n  position: relative;\n  float: left;\n  padding: 0;\n  border: 1px solid transparent;\n}\nnav ul li:hover ul[data-v-ff91f276] {\n  display: block;\n}\nnav ul li a[data-v-ff91f276] {\n  text-align: center;\n  width: 100%;\n  display: block;\n  border: 1px solid #505050;\n}\nnav ul li ul[data-v-ff91f276] {\n  position: absolute;\n  left: 0;\n  display: none;\n  width: 100%;\n}\nnav ul li ul a[data-v-ff91f276] {\n  text-align: left;\n}\nnav ul li ul li[data-v-ff91f276] {\n  float: none;\n  width: 100%;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("nav[data-v-7039ed82] {\n  height: 50px;\n  margin-top: 65px;\n}\nnav ul[data-v-7039ed82] {\n  list-style: none;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nnav ul li[data-v-7039ed82] {\n  position: relative;\n  float: left;\n  padding: 0;\n  border: 1px solid transparent;\n}\nnav ul li:hover ul[data-v-7039ed82] {\n  display: block;\n}\nnav ul li a[data-v-7039ed82] {\n  text-align: center;\n  width: 100%;\n  display: block;\n  border: 1px solid #505050;\n}\nnav ul li ul[data-v-7039ed82] {\n  position: absolute;\n  left: 0;\n  display: none;\n  width: 100%;\n}\nnav ul li ul a[data-v-7039ed82] {\n  text-align: left;\n}\nnav ul li ul li[data-v-7039ed82] {\n  float: none;\n  width: 100%;\n}")
 ;(function(){
 'use strict';
 
@@ -6648,20 +6514,21 @@ var __vue__options__ = (typeof module.exports === "function"? module.exports.opt
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
 __vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('nav',[_c('ul',_vm._l((_vm.items),function(item){return _c('li',{staticClass:"[ col-xs-2 ]"},[_c('a',{attrs:{"href":item.link}},[_vm._v(_vm._s(item.text))]),_vm._v(" "),_c('ul',{staticClass:"row"},_vm._l((item.subMenu),function(item){return _c('li',[_c('a',{attrs:{"href":item.subLink}},[_vm._v(_vm._s(item.subText))])])}))])}))])}
 __vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-ff91f276"
+__vue__options__._scopeId = "data-v-7039ed82"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ff91f276", __vue__options__)
+    hotAPI.createRecord("data-v-7039ed82", __vue__options__)
   } else {
-    hotAPI.reload("data-v-ff91f276", __vue__options__)
+    hotAPI.rerender("data-v-7039ed82", __vue__options__)
   }
 })()}
+
 },{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".page-home[data-v-18496001] {\n  color: red;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".page-home[data-v-28a350e4] {\n  color: red;\n}")
 ;(function(){
 "use strict";
 
@@ -6679,20 +6546,21 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-home"},[_vm._v("\n  "+_vm._s(_vm.test)+"}\n")])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-home"},[_c('img',{staticClass:"[ img-responsive ]",attrs:{"src":"/project.io/static/img/bear.jpg"}}),_vm._v("\n  "+_vm._s(_vm.test)+"}\n")])}
 __vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-18496001"
+__vue__options__._scopeId = "data-v-28a350e4"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-18496001", __vue__options__)
+    hotAPI.createRecord("data-v-28a350e4", __vue__options__)
   } else {
-    hotAPI.reload("data-v-18496001", __vue__options__)
+    hotAPI.rerender("data-v-28a350e4", __vue__options__)
   }
 })()}
+
 },{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
 ;(function(){
 'use strict';
@@ -6729,11 +6597,12 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2ab48ee8", __vue__options__)
+    hotAPI.createRecord("data-v-41ecda22", __vue__options__)
   } else {
-    hotAPI.reload("data-v-2ab48ee8", __vue__options__)
+    hotAPI.rerender("data-v-41ecda22", __vue__options__)
   }
 })()}
+
 },{"../components/PageContent.vue":8,"vue":3,"vue-hot-reload-api":2}],10:[function(require,module,exports){
 ;(function(){
 'use strict';
@@ -6762,16 +6631,40 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('header',[_c('HeaderMenu'),_vm._v(" "),_c('HeaderFixed')],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('header',[_c('HeaderFixed'),_vm._v(" "),_c('HeaderMenu')],1)}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2348a54a", __vue__options__)
+    hotAPI.createRecord("data-v-0cc31af2", __vue__options__)
   } else {
-    hotAPI.reload("data-v-2348a54a", __vue__options__)
+    hotAPI.rerender("data-v-0cc31af2", __vue__options__)
   }
 })()}
-},{"../components/HeaderFixed.vue":6,"../components/HeaderMenu.vue":7,"vue":3,"vue-hot-reload-api":2}]},{},[5]);
+
+},{"../components/HeaderFixed.vue":6,"../components/HeaderMenu.vue":7,"vue":3,"vue-hot-reload-api":2}],11:[function(require,module,exports){
+'use strict';
+
+//This is the main VueJS app file.
+//This file renders the vueJs Vue, injecting it into any page
+var Vue = require('vue');
+var Header = require('./containers/Header.vue');
+var Content = require('./containers/Content.vue');
+
+new Vue({
+  el: 'header',
+  render: function render(createElement) {
+    return createElement(Header);
+  }
+});
+
+new Vue({
+  el: '#page-container',
+  render: function render(createElement) {
+    return createElement(Content);
+  }
+});
+
+},{"./containers/Content.vue":9,"./containers/Header.vue":10,"vue":3}]},{},[5])

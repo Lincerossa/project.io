@@ -1,8 +1,8 @@
 <template>
-    <header>
-      <HeaderMenu></HeaderMenu>
-      <HeaderFixed></HeaderFixed>
-    </header>
+  <header>
+    <HeaderFixed></HeaderFixed>
+    <HeaderMenu></HeaderMenu>
+  </header>
 </template>
 
 

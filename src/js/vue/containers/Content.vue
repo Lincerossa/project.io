@@ -10,11 +10,6 @@
 import PageContent from '../components/PageContent.vue';
 
 export default {
-  data () {
-    return {
-      msg: 'lorem ipsum'
-    }
-  },
   components: {
     PageContent
   }
