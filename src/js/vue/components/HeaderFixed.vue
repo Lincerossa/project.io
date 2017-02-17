@@ -44,23 +44,14 @@ export default {
 
 
 
-
-
-
-
-
-
-
-
-
-
 <style scoped lang="less">
    @navbar-menu-color : #505050;
 
   .header-fixed{
     position: fixed;
     top:0;
-    height: 50px;
+    padding: 0px 20px;
+    height: 55px;
     left: 0;
     z-index: 2;
     background-color:#fff;
@@ -205,7 +196,6 @@ export default {
             font-size: 6rem;
             font-weight: 600;
             margin-bottom: 20px;
-            padding-bottom: 5px;
             border-bottom: 1px solid grey;
             transform:translate(-100vw,0);
             -webkit-transform:translate(-100vw,0);

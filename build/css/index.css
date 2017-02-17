@@ -6724,3 +6724,9 @@ button.close {
 html {
   height: 2000px;
 }
+.tb {
+  display: none;
+}
+.tb-site {
+  display: none;
+}
