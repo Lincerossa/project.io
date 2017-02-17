@@ -9,19 +9,20 @@
         <span></span>
       </div>
       <div class="[ jsOverlay ] header-fixed-overlay">
-        <ul>
+        <ul class="text-center">
           <li v-for="item in items">{{item.text}}</li>
+          <div class="col-xs-12 social">
+            <div class="col-xs-4 social__github">GitHub</div>
+            <div class="col-xs-4 social__facebook">Facebook</div>
+            <div class="col-xs-4 social__linkedin">Linkedin</div>
+          </div>
         <ul>
       </div>
-      <img src="/project.io/static/img/logo.jpg">
+      <img src="/project.io/static/img/logo.svg">
     </div>
 </template>
 
-
-
-
 <script>
-
 
 export default {
 
@@ -66,7 +67,9 @@ export default {
     right:0;
     border-bottom: 1px solid grey;
     display: flex;
+    display: -webkit-flex;
     justify-content:space-between;
+    -webkit-justify-content:space-between;
 
     img{
       width: 50px;
@@ -181,48 +184,57 @@ export default {
       position: fixed;
       width: 100vw;
       height: 100vh;
+      left: 0;
+      top:0;
       background-color: #fff;
       display: none;
 
       &.open{
-        display: flex;
         display: -webkit-flex;
-        
+        display: flex;
         justify-content: center;
-        o-content: center;
         webkit-justify-content: center;
         align-items: center;
         webkit-align-items: center;
-        o-align-items: center;
 
         ul{
           list-style: none;
           padding: 0;
+          position: relative;
           li{
             font-size: 6rem;
             font-weight: 600;
             margin-bottom: 20px;
             padding-bottom: 5px;
             border-bottom: 1px solid grey;
-            right:100vh;
+            transform:translate(-100vw,0);
+            -webkit-transform:translate(-100vw,0);
+            -moz-transform:translate(-100vw,0);
             opacity:0;
             position: relative;
+
+            animation-name:insertLi;
             animation-iteration-count:1;
             animation-fill-mode:forwards;
             animation-duration:.25s;
+
+            -webkit-animation-name:insertLi;
             -webkit-animation-iteration-count:1;
             -webkit-animation-fill-mode:forwards;
-            -webkit-animation-duration:.5s;
+            -webkit-animation-duration:.25s;
+
+            -o-animation-name:insertLi;
             -o-animation-iteration-count:1;
             -o-animation-fill-mode:forwards;
             -o-animation-duration:.25s;
+
+            -moz-animation-name:insertLi;
             -moz-animation-iteration-count:1;
             -moz-animation-fill-mode:forwards;
             -moz-animation-duration:.25s;
-            animation-name:insertLi;
-            -moz-animation-name:insertLi;
-            -webkit-animation-name:insertLi;
-            -o-animation-name:insertLi;
+
+            
+            
             &:hover{
               border-bottom:1px solid green;
               cursor: pointer;
@@ -231,43 +243,123 @@ export default {
 
             &:nth-of-type(1){
               animation-delay:0s;
+              -webkit-animation-delay:0s;
               -moz-animation-delay:0s;
               -o-animation-delay:0s;
-              -webkit-animation-delay:0s;
             }
             &:nth-of-type(2){
               animation-delay:.25s;
+              -webkit-animation-delay:.25s;
               -moz-animation-delay:.25s;
               -o-animation-delay:.25s;
-              -webkit-animation-delay:.25s;
             }
             &:nth-of-type(3){
               animation-delay:.5s;
+              -webkit-animation-delay:.5s;
               -moz-animation-delay:.5s;
               -o-animation-delay:.5s;
-              -webkit-animation-delay:.5s;
             }
+          }
+
+
+          .social{
+            top:-30px;
+            width:100%;
+            position: absolute;
+
+            div:nth-of-type(1){
+              -moz-animation-delay:1s;
+              -webkit-animation-delay:1s;
+              -o-animation-delay:1s;
+              animation-delay:1s;
+            }
+
+            div:nth-of-type(2){
+              -moz-animation-delay:1.5s;
+              -webkit-animation-delay:1.5s;
+              -o-animation-delay:1.5s;
+              animation-delay:1.5s;
+            }
+
+            div:nth-of-type(3){
+              -moz-animation-delay:2s;
+              -webkit-animation-delay:2s;
+              -o-animation-delay:2s;
+              animation-delay:2s;
+            }
+
+            div{
+              opacity: 0;
+              animation-name:insertSocial;
+              animation-iteration-count:1;
+              animation-fill-mode:forwards;
+              animation-duration:.5s;
+              -webkit-animation-name:insertSocial;
+              -webkit-animation-iteration-count:1;
+              -webkit-animation-fill-mode:forwards;
+              -webkit-animation-duration:.5s;
+              -o-animation-name:insertSocial;
+              -o-animation-iteration-count:1;
+              -o-animation-fill-mode:forwards;
+              -o-animation-duration:.5s;
+              -moz-animation-name:insertSocial;
+              -moz-animation-iteration-count:1;
+              -moz-animation-fill-mode:forwards;
+              -moz-animation-duration:.5s;
+            }
+            
           }
 
         }
 
        
         @keyframes insertLi{
-          from{right:100vh;opacity:0;}
-          to{right:0vh;opacity:1;}
+          from{transform:translate(-100vw,0);opacity:0;}
+          to{transform:translate(0,0);opacity:1;}
         }
         @-webkit-keyframes insertLi{
-          from{right:100vh;opacity:0;}
-          to{right:0vh;opacity:1;}
+          from{-webkit-transform:translate(-100vw,0);opacity:0;}
+          to{-webkit-transform:translate(0,0);opacity:1;}
         }
         @-moz-keyframes insertLi{
-          from{right:100vh;opacity:0;}
-          to{right:0vh;opacity:1;}
+          from{-moz-transform:translate(-100vw,0);opacity:0;}
+          to{-moz-transform:translate(0,0);opacity:1;}
         }
         @-o-keyframes insertLi{
-          from{right:100vh;opacity:0;}
-          to{right:0vh;opacity:1;}
+          from{-o-transform:translate(-100vw,0);opacity:0;}
+          to{-o-transform:translate(0,0);opacity:1;}
         }
+
+
+
+
+        @keyframes insertSocial{
+          from{opacity:0;}
+          to{opacity:1;}
+        }
+        @-webkit-keyframes insertSocial{
+          from{opacity:0;}
+          to{opacity:1;}
+        }
+        @-moz-keyframes insertSocial{
+          from{opacity:0;}
+          to{opacity:1;}
+        }
+        @-o-keyframes insertSocial{
+          from{opacity:0;}
+          to{opacity:1;}
+        }
+
+
+
+
+
+
+
+
+
+
+
 
       }
 
