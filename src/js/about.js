@@ -1,8 +1,6 @@
-//This is the main VueJS app file.
-//This file renders the vueJs Vue, injecting it into any page
 var Vue = require('vue');
-var Header = require('./containers/Header.vue');
-var Content = require('./containers/Content.vue');
+var Header = require('./vue/containers/Header.vue');
+var Content = require('./vue/containers/Content.vue');
 
 new Vue({
   el: 'header',

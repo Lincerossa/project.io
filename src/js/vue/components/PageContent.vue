@@ -2,7 +2,6 @@
 
 <template>
   <div class="page-home">
-    <img src="//project.io/static/img/bear.jpg" class="[ img-responsive ]">
     {{test}}}
   </div>
 </template>

@@ -6427,107 +6427,27 @@ exports.insert = function (css) {
 }
 
 },{}],5:[function(require,module,exports){
-"use strict";
-
-require('./vue/vue.js');
-
-var ciao = "ciaO";
-console.log(ciao + " -->");
-
-},{"./vue/vue.js":11}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header-fixed[data-v-21327461] {\n  position: fixed;\n  top: 0;\n  height: 50px;\n  left: 0;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  justify-content: space-around;\n}")
-var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _vm._m(0)}
-__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"header-fixed"},[_c('img',{attrs:{"src":"/project.io/static/img/logo.jpg"}}),_vm._v(" "),_c('p',[_vm._v("altro testo")]),_vm._v(" "),_c('p',[_vm._v("finale")])])}]
-__vue__options__._scopeId = "data-v-21327461"
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  module.hot.dispose(__vueify_style_dispose__)
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-21327461", __vue__options__)
-  } else {
-    hotAPI.rerender("data-v-21327461", __vue__options__)
-  }
-})()}
-},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("nav[data-v-7039ed82] {\n  height: 50px;\n  margin-top: 65px;\n}\nnav ul[data-v-7039ed82] {\n  list-style: none;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nnav ul li[data-v-7039ed82] {\n  position: relative;\n  float: left;\n  padding: 0;\n  border: 1px solid transparent;\n}\nnav ul li:hover ul[data-v-7039ed82] {\n  display: block;\n}\nnav ul li a[data-v-7039ed82] {\n  text-align: center;\n  width: 100%;\n  display: block;\n  border: 1px solid #505050;\n}\nnav ul li ul[data-v-7039ed82] {\n  position: absolute;\n  left: 0;\n  display: none;\n  width: 100%;\n}\nnav ul li ul a[data-v-7039ed82] {\n  text-align: left;\n}\nnav ul li ul li[data-v-7039ed82] {\n  float: none;\n  width: 100%;\n}")
-;(function(){
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  data: function data() {
-    return {
-      items: [{
-        link: 'http://www.prestiti.supermoney.eu',
-        text: 'Prestiti',
-        subMenu: [{
-          subLink: '/project.io/location/prestiti/index.html',
-          subText: "prestiti sub1"
-        }, {
-          subLink: 'http://www.prestiti.supermoney.eu/prestiti-online/',
-          subText: "prestiti sub2"
-        }, {
-          subLink: 'http://www.prestiti.supermoney.eu/prestiti-online/',
-          subText: "prestiti sub3"
-        }]
-      }, {
-        link: 'http://www.energia.supermoney.eu',
-        text: 'Energia',
-        subMenu: [{
-          subLink: 'http://www.energia.supermoney.eu/energia-online/',
-          subText: "energia sub1"
-        }, {
-          subLink: 'http://www.energia.supermoney.eu/energia-online/',
-          subText: "energia sub2"
-        }, {
-          subLink: 'http://www.energia.supermoney.eu/energia-online/',
-          subText: "energia sub3"
-        }, {
-          subLink: 'http://www.energia.supermoney.eu/energia-online/',
-          subText: "energia sub4"
-        }]
-      }, {
-        link: 'http://www.mutui.supermoney.eu',
-        text: 'Mutui'
-      }, {
-        link: 'http://www.telefonia.supermoney.eu',
-        text: 'Telefonia'
-      }, {
-        link: 'http://www.assicurazione-auto.supermoney.eu',
-        text: 'Assicurazione auto'
-      }, {
-        link: 'http://www.paytv.supermoney.eu',
-        text: 'Pay Tv'
-      }]
-    };
-  }
-};
-})()
-if (module.exports.__esModule) module.exports = module.exports.default
-var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('nav',[_c('ul',_vm._l((_vm.items),function(item){return _c('li',{staticClass:"[ col-xs-2 ]"},[_c('a',{attrs:{"href":item.link}},[_vm._v(_vm._s(item.text))]),_vm._v(" "),_c('ul',{staticClass:"row"},_vm._l((item.subMenu),function(item){return _c('li',[_c('a',{attrs:{"href":item.subLink}},[_vm._v(_vm._s(item.subText))])])}))])}))])}
-__vue__options__.staticRenderFns = []
-__vue__options__._scopeId = "data-v-7039ed82"
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  module.hot.dispose(__vueify_style_dispose__)
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7039ed82", __vue__options__)
-  } else {
-    hotAPI.rerender("data-v-7039ed82", __vue__options__)
-  }
-})()}
+var Vue = require('vue');
+var Header = require('./vue/containers/Header.vue');
+var Content = require('./vue/containers/Content.vue');
 
-},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
+new Vue({
+  el: 'header',
+  render: function render(createElement) {
+    return createElement(Header);
+  }
+});
+
+new Vue({
+  el: '#page-container',
+  render: function render(createElement) {
+    return createElement(Content);
+  }
+});
+
+},{"./vue/containers/Content.vue":7,"./vue/containers/Header.vue":8,"vue":3}],6:[function(require,module,exports){
 var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".page-home[data-v-28a350e4] {\n  color: red;\n}")
 ;(function(){
 "use strict";
@@ -6546,7 +6466,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-home"},[_c('img',{staticClass:"[ img-responsive ]",attrs:{"src":"/project.io/static/img/bear.jpg"}}),_vm._v("\n  "+_vm._s(_vm.test)+"}\n")])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-home"},[_vm._v("\n  "+_vm._s(_vm.test)+"}\n")])}
 __vue__options__.staticRenderFns = []
 __vue__options__._scopeId = "data-v-28a350e4"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -6561,7 +6481,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 
-},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],9:[function(require,module,exports){
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -6576,12 +6496,6 @@ var _PageContent2 = _interopRequireDefault(_PageContent);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  data: function data() {
-    return {
-      msg: 'lorem ipsum'
-    };
-  },
-
   components: {
     PageContent: _PageContent2.default
   }
@@ -6603,40 +6517,41 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 
-},{"../components/PageContent.vue":8,"vue":3,"vue-hot-reload-api":2}],10:[function(require,module,exports){
+},{"../components/PageContent.vue":6,"vue":3,"vue-hot-reload-api":2}],8:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header[data-v-0cc31af2] {\n  position: fixed;\n  top: 0;\n  padding: 0px 20px;\n  height: 55px;\n  left: 0;\n  z-index: 2;\n  background-color: #fff;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  display: -webkit-flex;\n  justify-content: space-between;\n  -webkit-justify-content: space-between;\n}\n.header-hamburger[data-v-0cc31af2] {\n  width: 35px;\n  z-index: 3;\n  height: 35px;\n  margin-top: 15px;\n  -webkit-transform: rotate(0deg);\n  -moz-transform: rotate(0deg);\n  -o-transform: rotate(0deg);\n  transform: rotate(0deg);\n  -webkit-transition: 0.5s ease-in-out;\n  -moz-transition: 0.5s ease-in-out;\n  -o-transition: 0.5s ease-in-out;\n  transition: 0.5s ease-in-out;\n  cursor: pointer;\n}\n.header-hamburger span[data-v-0cc31af2] {\n  display: block;\n  position: absolute;\n  height: 5px;\n  width: 50%;\n  background: #505050;\n  opacity: 1;\n  -webkit-transform: rotate(0deg);\n  -moz-transform: rotate(0deg);\n  -o-transform: rotate(0deg);\n  transform: rotate(0deg);\n  -webkit-transition: 0.25s ease-in-out;\n  -moz-transition: 0.25s ease-in-out;\n  -o-transition: 0.25s ease-in-out;\n  transition: 0.25s ease-in-out;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(even) {\n  left: 50%;\n  border-radius: 0 9px 9px 0;\n  -webkit-border-radius: 0 9px 9px 0;\n  -moz-border-radius: 0 9px 9px 0;\n  -o-border-radius: 0 9px 9px 0;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(odd) {\n  left: 0px;\n  border-radius: 9px 0 0 9px;\n  -webkit-border-radius: 9px 0 0 9px;\n  -moz-border-radius: 9px 0 0 9px;\n  -o-border-radius: 9px 0 0 9px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(1),\n.header-hamburger span[data-v-0cc31af2]:nth-child(2) {\n  top: 0px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(3),\n.header-hamburger span[data-v-0cc31af2]:nth-child(4) {\n  top: 10px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(5),\n.header-hamburger span[data-v-0cc31af2]:nth-child(6) {\n  top: 20px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(1),\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(6) {\n  -webkit-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  -o-transform: rotate(45deg);\n  transform: rotate(45deg);\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(2),\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(5) {\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(1) {\n  left: 5px;\n  top: 5px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(2) {\n  left: calc(45%);\n  top: 5px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(3) {\n  left: -50%;\n  opacity: 0;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(4) {\n  left: 100%;\n  opacity: 0;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(5) {\n  left: 5px;\n  top: 15px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(6) {\n  left: calc(45%);\n  top: 15px;\n}\n.header-overlay[data-v-0cc31af2] {\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  left: 0;\n  top: 0;\n  background-color: #fff;\n  display: none;\n}\n.header-overlay.open[data-v-0cc31af2] {\n  display: -webkit-flex;\n  display: flex;\n  justify-content: center;\n  webkit-justify-content: center;\n  align-items: center;\n  webkit-align-items: center;\n}\n.header-overlay.open ul[data-v-0cc31af2] {\n  list-style: none;\n  padding: 0;\n  position: relative;\n}\n.header-overlay.open ul li[data-v-0cc31af2] {\n  font-size: 6rem;\n  font-weight: 600;\n  margin-bottom: 20px;\n  border-bottom: 1px solid grey;\n  transform: translate(-100vw, 0);\n  -webkit-transform: translate(-100vw, 0);\n  -moz-transform: translate(-100vw, 0);\n  opacity: 0;\n  position: relative;\n  animation-name: insertLi;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n  animation-duration: .25s;\n  -webkit-animation-name: insertLi;\n  -webkit-animation-iteration-count: 1;\n  -webkit-animation-fill-mode: forwards;\n  -webkit-animation-duration: .25s;\n  -o-animation-name: insertLi;\n  -o-animation-iteration-count: 1;\n  -o-animation-fill-mode: forwards;\n  -o-animation-duration: .25s;\n  -moz-animation-name: insertLi;\n  -moz-animation-iteration-count: 1;\n  -moz-animation-fill-mode: forwards;\n  -moz-animation-duration: .25s;\n}\n.header-overlay.open ul li a[data-v-0cc31af2]:hover {\n  text-decoration: none;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:hover {\n  border-bottom: 1px solid green;\n  cursor: pointer;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(1) {\n  animation-delay: 0s;\n  -webkit-animation-delay: 0s;\n  -moz-animation-delay: 0s;\n  -o-animation-delay: 0s;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(2) {\n  animation-delay: .25s;\n  -webkit-animation-delay: .25s;\n  -moz-animation-delay: .25s;\n  -o-animation-delay: .25s;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(3) {\n  animation-delay: .5s;\n  -webkit-animation-delay: .5s;\n  -moz-animation-delay: .5s;\n  -o-animation-delay: .5s;\n}\n.header-overlay.open ul .social[data-v-0cc31af2] {\n  top: -30px;\n  width: 100%;\n  position: absolute;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(1) {\n  -moz-animation-delay: 1s;\n  -webkit-animation-delay: 1s;\n  -o-animation-delay: 1s;\n  animation-delay: 1s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(2) {\n  -moz-animation-delay: 1.5s;\n  -webkit-animation-delay: 1.5s;\n  -o-animation-delay: 1.5s;\n  animation-delay: 1.5s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(3) {\n  -moz-animation-delay: 2s;\n  -webkit-animation-delay: 2s;\n  -o-animation-delay: 2s;\n  animation-delay: 2s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2] {\n  opacity: 0;\n  display: block;\n  animation-name: insertSocial;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n  animation-duration: .5s;\n  -webkit-animation-name: insertSocial;\n  -webkit-animation-iteration-count: 1;\n  -webkit-animation-fill-mode: forwards;\n  -webkit-animation-duration: .5s;\n  -o-animation-name: insertSocial;\n  -o-animation-iteration-count: 1;\n  -o-animation-fill-mode: forwards;\n  -o-animation-duration: .5s;\n  -moz-animation-name: insertSocial;\n  -moz-animation-iteration-count: 1;\n  -moz-animation-fill-mode: forwards;\n  -moz-animation-duration: .5s;\n}\n@keyframes insertLi {\n  from {\n    transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-webkit-keyframes insertLi {\n  from {\n    -webkit-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -webkit-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-moz-keyframes insertLi {\n  from {\n    -moz-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -moz-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-o-keyframes insertLi {\n  from {\n    -o-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -o-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-moz-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-o-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.header-logo[data-v-0cc31af2] {\n  width: 60px;\n}\n.header-logo[data-v-0cc31af2]:hover {\n  cursor: pointer;\n}\n.header-logo img[data-v-0cc31af2] {\n  width: 100%;\n}")
 ;(function(){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _HeaderMenu = require('../components/HeaderMenu.vue');
-
-var _HeaderMenu2 = _interopRequireDefault(_HeaderMenu);
-
-var _HeaderFixed = require('../components/HeaderFixed.vue');
-
-var _HeaderFixed2 = _interopRequireDefault(_HeaderFixed);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 exports.default = {
-  components: {
-    HeaderMenu: _HeaderMenu2.default,
-    HeaderFixed: _HeaderFixed2.default
+  data: function data() {
+    return {
+      items: [{ text: '1111', link: '/project.io/page/about.html' }, { text: '2222222', link: '/project.io/page/skills.html' }, { text: '333', link: '/project.io/page/works.html' }]
+    };
+  },
+
+
+  methods: {
+    toggle: function toggle() {
+      $(".jsHamburger, .jsOverlay").toggleClass("open");
+    }
   }
+
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('header',[_c('HeaderFixed'),_vm._v(" "),_c('HeaderMenu')],1)}
-__vue__options__.staticRenderFns = []
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"header"},[_c('div',{staticClass:"[ jsHamburger ] header-hamburger",on:{"click":_vm.toggle}},_vm._l((6),function(n){return _c('span')})),_vm._v(" "),_c('div',{staticClass:"[ jsOverlay ] header-overlay"},[_c('ul',{staticClass:"text-center"},[_vm._l((_vm.items),function(item){return _c('li',[_c('a',{attrs:{"href":item.link}},[_vm._v(_vm._s(item.text))])])}),_vm._v(" "),_vm._m(0),_vm._v(" "),_c('ul')],2)]),_vm._v(" "),_vm._m(1)])}
+__vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"col-xs-12 social"},[_c('a',{staticClass:"col-xs-4",attrs:{"href":"https://github.com/Lincerossa"}},[_c('img',{attrs:{"src":"/project.io/static/img/GitHub-Mark-64px.png"}})]),_vm._v(" "),_c('a',{staticClass:"col-xs-4",attrs:{"href":"https://github.com/Lincerossa"}},[_c('img',{attrs:{"src":"/project.io/static/img/GitHub-Mark-64px.png"}})]),_vm._v(" "),_c('a',{staticClass:"col-xs-4",attrs:{"hhref":"https://github.com/Lincerossa"}},[_c('img',{attrs:{"src":"/project.io/static/img/GitHub-Mark-64px.png"}})])])},function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('a',{staticClass:"header-logo",attrs:{"href":"/project.io/"}},[_c('img',{attrs:{"src":"/project.io/static/img/logo.svg"}})])}]
+__vue__options__._scopeId = "data-v-0cc31af2"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-0cc31af2", __vue__options__)
   } else {
@@ -6644,27 +6559,4 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   }
 })()}
 
-},{"../components/HeaderFixed.vue":6,"../components/HeaderMenu.vue":7,"vue":3,"vue-hot-reload-api":2}],11:[function(require,module,exports){
-'use strict';
-
-//This is the main VueJS app file.
-//This file renders the vueJs Vue, injecting it into any page
-var Vue = require('vue');
-var Header = require('./containers/Header.vue');
-var Content = require('./containers/Content.vue');
-
-new Vue({
-  el: 'header',
-  render: function render(createElement) {
-    return createElement(Header);
-  }
-});
-
-new Vue({
-  el: '#page-container',
-  render: function render(createElement) {
-    return createElement(Content);
-  }
-});
-
-},{"./containers/Content.vue":9,"./containers/Header.vue":10,"vue":3}]},{},[5])
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}]},{},[5])

@@ -6724,9 +6724,10 @@ button.close {
 html {
   height: 2000px;
 }
-.tb {
-  display: none;
+a {
+  color: #505050;
+  transition: color .2s;
 }
-.tb-site {
-  display: none;
+a:hover {
+  color: green;
 }
