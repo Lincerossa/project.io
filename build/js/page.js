@@ -6452,6 +6452,8 @@ exports.default = {
 
   methods: {
     toggle: function toggle() {
+      var el = new Audio("http://static1.grsites.com/archive/sounds/birds/birds001.wav");
+      el.play();
       $(".jsHamburger, .jsOverlay").toggleClass("open");
     }
   }

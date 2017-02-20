@@ -35,6 +35,8 @@ export default {
 
   methods: {
     toggle () {
+      var el = new Audio("http://static1.grsites.com/archive/sounds/birds/birds001.wav");
+      el.play();
       $(".jsHamburger, .jsOverlay").toggleClass("open");
     }
   },
