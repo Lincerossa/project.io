@@ -1,6 +1,6 @@
 var Vue = require('vue');
 var Header = require('./vue/containers/Header.vue');
-var Content = require('./vue/containers/Content.vue');
+var Content = require('./vue/containers/ContentAbout.vue');
 
 new Vue({
   el: 'header',

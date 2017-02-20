@@ -25,9 +25,9 @@
     data(){
       return {
         items : [
-          {text: '1111', link:'/project.io/page/about.html'},
-          {text: '2222222', link:'/project.io/page/skills.html'},
-          {text: '333', link:'/project.io/page/works.html'}
+          {text: 'About', link:'/project.io/page/about.html'},
+          {text: 'Skills', link:'/project.io/page/skills.html'},
+          {text: 'Works', link:'/project.io/page/works.html'}
         ]
       }
     },
@@ -187,9 +187,9 @@
           padding: 0;
           position: relative;
           li{
-            font-size: 6rem;
+            font-size: 5rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border-bottom: 1px solid grey;
             transform:translate(-100vw,0);
             -webkit-transform:translate(-100vw,0);
@@ -247,9 +247,7 @@
           }
 
           .social{
-            top:-30px;
             width:100%;
-            position: absolute;
 
             a:nth-of-type(1){
               -moz-animation-delay:1s;
