@@ -247,7 +247,7 @@
           }
 
           .social{
-            width:100%;
+            margin-top: 10px;
 
             a:nth-of-type(1){
               -moz-animation-delay:1s;

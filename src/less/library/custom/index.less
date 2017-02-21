@@ -1,13 +1,11 @@
 @import "variables.less";
 
-html{
-	height: 2000px;
-}
-
 a{
 	color:@color-link;
 	transition:color .2s;
-	&:hover{
+	&:hover,
+	&:focus,
+	&:active{
 		color:@color-link-hover;
 	}
 }

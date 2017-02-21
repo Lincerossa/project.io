@@ -6431,6 +6431,7 @@ exports.insert = function (css) {
 
 var Vue = require('vue');
 var Header = require('./vue/containers/Header.vue');
+var Content = require('./vue/containers/ContentWorks.vue');
 
 new Vue({
   el: 'header',
@@ -6439,8 +6440,116 @@ new Vue({
   }
 });
 
-},{"./vue/containers/Header.vue":6,"vue":3}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header[data-v-0cc31af2] {\n  position: fixed;\n  top: 0;\n  padding: 0px 20px;\n  height: 55px;\n  left: 0;\n  z-index: 2;\n  background-color: #fff;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  display: -webkit-flex;\n  justify-content: space-between;\n  -webkit-justify-content: space-between;\n}\n.header-hamburger[data-v-0cc31af2] {\n  width: 35px;\n  z-index: 3;\n  height: 35px;\n  margin-top: 15px;\n  -webkit-transform: rotate(0deg);\n  -moz-transform: rotate(0deg);\n  -o-transform: rotate(0deg);\n  transform: rotate(0deg);\n  -webkit-transition: 0.5s ease-in-out;\n  -moz-transition: 0.5s ease-in-out;\n  -o-transition: 0.5s ease-in-out;\n  transition: 0.5s ease-in-out;\n  cursor: pointer;\n}\n.header-hamburger span[data-v-0cc31af2] {\n  display: block;\n  position: absolute;\n  height: 5px;\n  width: 50%;\n  background: #505050;\n  opacity: 1;\n  -webkit-transform: rotate(0deg);\n  -moz-transform: rotate(0deg);\n  -o-transform: rotate(0deg);\n  transform: rotate(0deg);\n  -webkit-transition: 0.25s ease-in-out;\n  -moz-transition: 0.25s ease-in-out;\n  -o-transition: 0.25s ease-in-out;\n  transition: 0.25s ease-in-out;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(even) {\n  left: 50%;\n  border-radius: 0 9px 9px 0;\n  -webkit-border-radius: 0 9px 9px 0;\n  -moz-border-radius: 0 9px 9px 0;\n  -o-border-radius: 0 9px 9px 0;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(odd) {\n  left: 0px;\n  border-radius: 9px 0 0 9px;\n  -webkit-border-radius: 9px 0 0 9px;\n  -moz-border-radius: 9px 0 0 9px;\n  -o-border-radius: 9px 0 0 9px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(1),\n.header-hamburger span[data-v-0cc31af2]:nth-child(2) {\n  top: 0px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(3),\n.header-hamburger span[data-v-0cc31af2]:nth-child(4) {\n  top: 10px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(5),\n.header-hamburger span[data-v-0cc31af2]:nth-child(6) {\n  top: 20px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(1),\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(6) {\n  -webkit-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  -o-transform: rotate(45deg);\n  transform: rotate(45deg);\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(2),\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(5) {\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(1) {\n  left: 5px;\n  top: 5px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(2) {\n  left: calc(45%);\n  top: 5px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(3) {\n  left: -50%;\n  opacity: 0;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(4) {\n  left: 100%;\n  opacity: 0;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(5) {\n  left: 5px;\n  top: 15px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(6) {\n  left: calc(45%);\n  top: 15px;\n}\n.header-overlay[data-v-0cc31af2] {\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  left: 0;\n  top: 0;\n  background-color: #fff;\n  display: none;\n}\n.header-overlay.open[data-v-0cc31af2] {\n  display: -webkit-flex;\n  display: flex;\n  justify-content: center;\n  webkit-justify-content: center;\n  align-items: center;\n  webkit-align-items: center;\n}\n.header-overlay.open ul[data-v-0cc31af2] {\n  list-style: none;\n  padding: 0;\n  position: relative;\n}\n.header-overlay.open ul li[data-v-0cc31af2] {\n  font-size: 5rem;\n  font-weight: 600;\n  margin-bottom: 10px;\n  border-bottom: 1px solid grey;\n  transform: translate(-100vw, 0);\n  -webkit-transform: translate(-100vw, 0);\n  -moz-transform: translate(-100vw, 0);\n  opacity: 0;\n  position: relative;\n  animation-name: insertLi;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n  animation-duration: .25s;\n  -webkit-animation-name: insertLi;\n  -webkit-animation-iteration-count: 1;\n  -webkit-animation-fill-mode: forwards;\n  -webkit-animation-duration: .25s;\n  -o-animation-name: insertLi;\n  -o-animation-iteration-count: 1;\n  -o-animation-fill-mode: forwards;\n  -o-animation-duration: .25s;\n  -moz-animation-name: insertLi;\n  -moz-animation-iteration-count: 1;\n  -moz-animation-fill-mode: forwards;\n  -moz-animation-duration: .25s;\n}\n.header-overlay.open ul li a[data-v-0cc31af2]:hover {\n  text-decoration: none;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:hover {\n  border-bottom: 1px solid green;\n  cursor: pointer;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(1) {\n  animation-delay: 0s;\n  -webkit-animation-delay: 0s;\n  -moz-animation-delay: 0s;\n  -o-animation-delay: 0s;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(2) {\n  animation-delay: .25s;\n  -webkit-animation-delay: .25s;\n  -moz-animation-delay: .25s;\n  -o-animation-delay: .25s;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(3) {\n  animation-delay: .5s;\n  -webkit-animation-delay: .5s;\n  -moz-animation-delay: .5s;\n  -o-animation-delay: .5s;\n}\n.header-overlay.open ul .social[data-v-0cc31af2] {\n  width: 100%;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(1) {\n  -moz-animation-delay: 1s;\n  -webkit-animation-delay: 1s;\n  -o-animation-delay: 1s;\n  animation-delay: 1s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(2) {\n  -moz-animation-delay: 1.5s;\n  -webkit-animation-delay: 1.5s;\n  -o-animation-delay: 1.5s;\n  animation-delay: 1.5s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(3) {\n  -moz-animation-delay: 2s;\n  -webkit-animation-delay: 2s;\n  -o-animation-delay: 2s;\n  animation-delay: 2s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2] {\n  opacity: 0;\n  display: block;\n  animation-name: insertSocial;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n  animation-duration: .5s;\n  -webkit-animation-name: insertSocial;\n  -webkit-animation-iteration-count: 1;\n  -webkit-animation-fill-mode: forwards;\n  -webkit-animation-duration: .5s;\n  -o-animation-name: insertSocial;\n  -o-animation-iteration-count: 1;\n  -o-animation-fill-mode: forwards;\n  -o-animation-duration: .5s;\n  -moz-animation-name: insertSocial;\n  -moz-animation-iteration-count: 1;\n  -moz-animation-fill-mode: forwards;\n  -moz-animation-duration: .5s;\n}\n@keyframes insertLi {\n  from {\n    transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-webkit-keyframes insertLi {\n  from {\n    -webkit-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -webkit-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-moz-keyframes insertLi {\n  from {\n    -moz-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -moz-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-o-keyframes insertLi {\n  from {\n    -o-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -o-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-moz-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-o-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.header-logo[data-v-0cc31af2] {\n  width: 60px;\n}\n.header-logo[data-v-0cc31af2]:hover {\n  cursor: pointer;\n}\n.header-logo img[data-v-0cc31af2] {\n  width: 100%;\n}")
+new Vue({
+  el: '#page-container',
+  render: function render(createElement) {
+    return createElement(Content);
+  }
+});
+
+},{"./vue/containers/ContentWorks.vue":7,"./vue/containers/Header.vue":8,"vue":3}],6:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".page-home[data-v-28a350e4] {\n  color: red;\n}")
+;(function(){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  data: function data() {
+    return {
+      test: "lorem ipsum"
+    };
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"page-home"},[_vm._v("\n  "+_vm._s(_vm.test)+"}\n")])}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-28a350e4"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-28a350e4", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-28a350e4", __vue__options__)
+  }
+})()}
+
+},{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],7:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".page-container[data-v-33bb1b03] {\n  padding-top: 60px;\n}\n.page-container .content[data-v-33bb1b03] {\n  border-bottom: 1px solid grey;\n  padding: 5px 10px;\n  border-radius: 2px;\n  margin: 0;\n  height: 45px;\n  transition: height .5;\n  cursor: pointer;\n  overflow: hidden;\n}\n.page-container .content h2[data-v-33bb1b03] {\n  margin: 0;\n  margin-bottom: 5px;\n}\n.page-container .content.open[data-v-33bb1b03] {\n  animation-name: accordion;\n  animation-duration: 0.5s;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n}\n@keyframes accordion {\n  from {\n    height: 45px;\n  }\n  to {\n    height: 100px;\n  }\n}")
+;(function(){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+									value: true
+});
+
+var _PageContent = require("../components/PageContent.vue");
+
+var _PageContent2 = _interopRequireDefault(_PageContent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+									methods: {
+																		toggle: function toggle(e) {
+																											$(e.currentTarget).siblings().removeClass("open");
+																											$(e.currentTarget).toggleClass("open");
+																		}
+									},
+									data: function data() {
+																		return {
+																											content: [{
+																																				title: "uno",
+																																				description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
+																																				active: true
+																											}, {
+																																				title: "due",
+																																				description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
+																																				active: false
+																											}, {
+																																				title: "tre",
+																																				description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
+																																				active: false
+																											}, {
+																																				title: "quattro",
+																																				description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
+																																				active: false
+																											}, {
+																																				title: "cique", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare,pulvinar elit. E",
+																																				active: false
+																											}]
+																		};
+									}
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('div',{staticClass:"container page-container"},_vm._l((_vm.content),function(item){return _c('div',{staticClass:"content",on:{"click":function($event){_vm.toggle($event)}}},[_c('h2',[_vm._v(_vm._s(item.title))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(item.description))])])}))}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-33bb1b03"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-33bb1b03", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-33bb1b03", __vue__options__)
+  }
+})()}
+
+},{"../components/PageContent.vue":6,"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}],8:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".header[data-v-0cc31af2] {\n  position: fixed;\n  top: 0;\n  padding: 0px 20px;\n  height: 55px;\n  left: 0;\n  z-index: 2;\n  background-color: #fff;\n  right: 0;\n  border-bottom: 1px solid grey;\n  display: flex;\n  display: -webkit-flex;\n  justify-content: space-between;\n  -webkit-justify-content: space-between;\n}\n.header-hamburger[data-v-0cc31af2] {\n  width: 35px;\n  z-index: 3;\n  height: 35px;\n  margin-top: 15px;\n  -webkit-transform: rotate(0deg);\n  -moz-transform: rotate(0deg);\n  -o-transform: rotate(0deg);\n  transform: rotate(0deg);\n  -webkit-transition: 0.5s ease-in-out;\n  -moz-transition: 0.5s ease-in-out;\n  -o-transition: 0.5s ease-in-out;\n  transition: 0.5s ease-in-out;\n  cursor: pointer;\n}\n.header-hamburger span[data-v-0cc31af2] {\n  display: block;\n  position: absolute;\n  height: 5px;\n  width: 50%;\n  background: #505050;\n  opacity: 1;\n  -webkit-transform: rotate(0deg);\n  -moz-transform: rotate(0deg);\n  -o-transform: rotate(0deg);\n  transform: rotate(0deg);\n  -webkit-transition: 0.25s ease-in-out;\n  -moz-transition: 0.25s ease-in-out;\n  -o-transition: 0.25s ease-in-out;\n  transition: 0.25s ease-in-out;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(even) {\n  left: 50%;\n  border-radius: 0 9px 9px 0;\n  -webkit-border-radius: 0 9px 9px 0;\n  -moz-border-radius: 0 9px 9px 0;\n  -o-border-radius: 0 9px 9px 0;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(odd) {\n  left: 0px;\n  border-radius: 9px 0 0 9px;\n  -webkit-border-radius: 9px 0 0 9px;\n  -moz-border-radius: 9px 0 0 9px;\n  -o-border-radius: 9px 0 0 9px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(1),\n.header-hamburger span[data-v-0cc31af2]:nth-child(2) {\n  top: 0px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(3),\n.header-hamburger span[data-v-0cc31af2]:nth-child(4) {\n  top: 10px;\n}\n.header-hamburger span[data-v-0cc31af2]:nth-child(5),\n.header-hamburger span[data-v-0cc31af2]:nth-child(6) {\n  top: 20px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(1),\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(6) {\n  -webkit-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  -o-transform: rotate(45deg);\n  transform: rotate(45deg);\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(2),\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(5) {\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(1) {\n  left: 5px;\n  top: 5px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(2) {\n  left: calc(45%);\n  top: 5px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(3) {\n  left: -50%;\n  opacity: 0;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(4) {\n  left: 100%;\n  opacity: 0;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(5) {\n  left: 5px;\n  top: 15px;\n}\n.header-hamburger.open span[data-v-0cc31af2]:nth-child(6) {\n  left: calc(45%);\n  top: 15px;\n}\n.header-overlay[data-v-0cc31af2] {\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  left: 0;\n  top: 0;\n  background-color: #fff;\n  display: none;\n}\n.header-overlay.open[data-v-0cc31af2] {\n  display: -webkit-flex;\n  display: flex;\n  justify-content: center;\n  webkit-justify-content: center;\n  align-items: center;\n  webkit-align-items: center;\n}\n.header-overlay.open ul[data-v-0cc31af2] {\n  list-style: none;\n  padding: 0;\n  position: relative;\n}\n.header-overlay.open ul li[data-v-0cc31af2] {\n  font-size: 5rem;\n  font-weight: 600;\n  margin-bottom: 10px;\n  border-bottom: 1px solid grey;\n  transform: translate(-100vw, 0);\n  -webkit-transform: translate(-100vw, 0);\n  -moz-transform: translate(-100vw, 0);\n  opacity: 0;\n  position: relative;\n  animation-name: insertLi;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n  animation-duration: .25s;\n  -webkit-animation-name: insertLi;\n  -webkit-animation-iteration-count: 1;\n  -webkit-animation-fill-mode: forwards;\n  -webkit-animation-duration: .25s;\n  -o-animation-name: insertLi;\n  -o-animation-iteration-count: 1;\n  -o-animation-fill-mode: forwards;\n  -o-animation-duration: .25s;\n  -moz-animation-name: insertLi;\n  -moz-animation-iteration-count: 1;\n  -moz-animation-fill-mode: forwards;\n  -moz-animation-duration: .25s;\n}\n.header-overlay.open ul li a[data-v-0cc31af2]:hover {\n  text-decoration: none;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:hover {\n  border-bottom: 1px solid green;\n  cursor: pointer;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(1) {\n  animation-delay: 0s;\n  -webkit-animation-delay: 0s;\n  -moz-animation-delay: 0s;\n  -o-animation-delay: 0s;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(2) {\n  animation-delay: .25s;\n  -webkit-animation-delay: .25s;\n  -moz-animation-delay: .25s;\n  -o-animation-delay: .25s;\n}\n.header-overlay.open ul li[data-v-0cc31af2]:nth-of-type(3) {\n  animation-delay: .5s;\n  -webkit-animation-delay: .5s;\n  -moz-animation-delay: .5s;\n  -o-animation-delay: .5s;\n}\n.header-overlay.open ul .social[data-v-0cc31af2] {\n  margin-top: 10px;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(1) {\n  -moz-animation-delay: 1s;\n  -webkit-animation-delay: 1s;\n  -o-animation-delay: 1s;\n  animation-delay: 1s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(2) {\n  -moz-animation-delay: 1.5s;\n  -webkit-animation-delay: 1.5s;\n  -o-animation-delay: 1.5s;\n  animation-delay: 1.5s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2]:nth-of-type(3) {\n  -moz-animation-delay: 2s;\n  -webkit-animation-delay: 2s;\n  -o-animation-delay: 2s;\n  animation-delay: 2s;\n}\n.header-overlay.open ul .social a[data-v-0cc31af2] {\n  opacity: 0;\n  display: block;\n  animation-name: insertSocial;\n  animation-iteration-count: 1;\n  animation-fill-mode: forwards;\n  animation-duration: .5s;\n  -webkit-animation-name: insertSocial;\n  -webkit-animation-iteration-count: 1;\n  -webkit-animation-fill-mode: forwards;\n  -webkit-animation-duration: .5s;\n  -o-animation-name: insertSocial;\n  -o-animation-iteration-count: 1;\n  -o-animation-fill-mode: forwards;\n  -o-animation-duration: .5s;\n  -moz-animation-name: insertSocial;\n  -moz-animation-iteration-count: 1;\n  -moz-animation-fill-mode: forwards;\n  -moz-animation-duration: .5s;\n}\n@keyframes insertLi {\n  from {\n    transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-webkit-keyframes insertLi {\n  from {\n    -webkit-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -webkit-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-moz-keyframes insertLi {\n  from {\n    -moz-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -moz-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@-o-keyframes insertLi {\n  from {\n    -o-transform: translate(-100vw, 0);\n    opacity: 0;\n  }\n  to {\n    -o-transform: translate(0, 0);\n    opacity: 1;\n  }\n}\n@keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-moz-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@-o-keyframes insertSocial {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.header-logo[data-v-0cc31af2] {\n  width: 60px;\n}\n.header-logo[data-v-0cc31af2]:hover {\n  cursor: pointer;\n}\n.header-logo img[data-v-0cc31af2] {\n  width: 100%;\n}")
 ;(function(){
 'use strict';
 
