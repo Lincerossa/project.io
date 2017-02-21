@@ -2,7 +2,7 @@
   <div class="container page-container">
     <div class="content" v-for="item in content" v-on:click="toggle($event)">
       <h2>{{item.title}}</h2>
-      <p>{{item.description}}</p>
+      <div class="content-toggle"><img v-if="item.img" :src="item.imgLink"><p>{{item.description}}</p></div>
     </div>
   </div>
 </template>
@@ -16,8 +16,8 @@ export default {
 
   methods : {
     toggle(e){
-      $(e.currentTarget).siblings().removeClass("open");
-      $(e.currentTarget).toggleClass("open")
+      $(e.currentTarget).siblings().removeClass("open").find("div").slideUp();
+      $(e.currentTarget).addClass("open").find("div").slideDown();
     }
 
   },
@@ -25,28 +25,29 @@ export default {
   	return{
   		content:[
 	  		{
-	  			title:"uno",
+	  			title:"Landing Page Tim",
 	  		  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
-          active:true
+          img:true,
+          imgLink:'/project.io/static/img/logo.svg'
 	  		},
 	  		{
 	  			title:"due",
 	  		  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
-          active:false
+          img:false
 	  	  },
 	  		{
 	  			title:"tre",
 	  		  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
-          active:false
+          img:false
 	  	  },
 	  		{
 	  			title:"quattro",
 	  			description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare pulvinar elit. E",
-          active:false
+          img:false
 	  		},
 	  		{
 	  			title:"cique",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent enim ante, dignissim a fermentum ac, interdum sit amet odio. Vivamus a augue ac diam consectetur faucibus. Sed interdum vulputate urna, at pharetra nulla porttitor at. Vestibulum id euismod enim. Curabitur nulla felis, malesuada ut lorem quis, ornare,pulvinar elit. E",
-          active:false
+          img:false
 	  		}
   		]
   	}
@@ -59,34 +60,45 @@ export default {
 <style scoped lang="less">
 
   @import "./../../../less/library/custom/variables.less";
+
+  @import "./../../../less/library/font-awesome-4.7.0/less/font-awesome.less";
+  
   .page-container{
   	padding-top: 60px;
 
   	.content{
   		border-bottom:1px solid @color-border;
-  		padding:5px 10px;
+  		padding:10px;
   		border-radius: 2px;
   		margin:0;
-      height: 45px;
-      transition:height .5;
       cursor:pointer;
       overflow: hidden;
-  		h2{
-  			margin:0;
-  			margin-bottom: 5px;
-  		}
 
       &.open{
-        animation-name:accordion;
-        animation-duration:0.5s;
-        animation-iteration-count:1;
-        animation-fill-mode:forwards;
+        &:after{
+          content:"\f067";
+          font-family: FontAwesome;
+          position: absolute;
+          left: 0;
+        }
+
       }
+  		h2{
+  			margin:0;
+  		}
 
+      &-toggle{
+        display: none;
+        margin:0;
 
-      @keyframes accordion{
-        from{height:45px;}
-        to{height:100px;}
+        img{
+          width:60px;
+          display: inline-block;
+        }
+        p{
+          margin:0;
+        }
+
       }
 
 
