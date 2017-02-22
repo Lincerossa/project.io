@@ -6432,7 +6432,7 @@ exports.insert = function (css) {
 require('./vue/vue.js');
 
 },{"./vue/vue.js":10}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("ul[data-v-08bc2bcf] {\n  list-style: none;\n  padding: 0;\n  margin-top: 10px;\n}\nul li p[data-v-08bc2bcf] {\n  margin: 0;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("ul[data-v-08bc2bcf] {\n  list-style: none;\n  padding: 0;\n  margin-top: 10px;\n}\nul li p[data-v-08bc2bcf] {\n  margin: 0;\n}\nul li > div[data-v-08bc2bcf] {\n  margin-top: 5px;\n}\nul li .progression[data-v-08bc2bcf] {\n  height: 10px;\n  background-color: #00cc00;\n  border-top-right-radius: 4px;\n  -webkit-border-top-right-radius: 4px;\n  -moz-border-top-right-radius: 4px;\n  -o-border-top-right-radius: 4px;\n  border-bottom-right-radius: 4px;\n  -webkit-border-bottom-right-radius: 4px;\n  -moz-border-bottom-right-radius: 4px;\n  -o-border-bottom-right-radius: 4px;\n  width: 0%;\n  -webkit-animation-duration: 1s;\n  animation-duration: 1s;\n  -webkit-animation-fill-mode: forwards;\n  animation-fill-mode: forwards;\n  -webkit-animation-iteration-count: 1;\n  animation-iteration-count: 1;\n}\nul.open .one[data-v-08bc2bcf] {\n  -webkit-animation-name: skillOne;\n  animation-name: skillOne;\n}\nul.open .two[data-v-08bc2bcf] {\n  -webkit-animation-name: skillTwo;\n  animation-name: skillTwo;\n}\nul.open .three[data-v-08bc2bcf] {\n  -webkit-animation-name: skillThree;\n  animation-name: skillThree;\n}\nul.open .four[data-v-08bc2bcf] {\n  -webkit-animation-name: skillFour;\n  animation-name: skillFour;\n}\nul.open .five[data-v-08bc2bcf] {\n  -webkit-animation-name: skillFive;\n  animation-name: skillFive;\n}\n@keyframes skillOne {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 20%;\n  }\n}\n@-webkit-keyframes skillOne {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 20%;\n  }\n}\n@-moz-keyframes skillOne {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 20%;\n  }\n}\n@-o-keyframes skillOne {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 20%;\n  }\n}\n@keyframes skillTwo {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 40%;\n  }\n}\n@-webkit-keyframes skillTwo {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 40%;\n  }\n}\n@-moz-keyframes skillTwo {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 40%;\n  }\n}\n@-o-keyframes skillTwo {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 40%;\n  }\n}\n@keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@-webkit-keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@-moz-keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@-o-keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@-webkit-keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@-moz-keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@-o-keyframes skillThree {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 60%;\n  }\n}\n@keyframes skillFour {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 80%;\n  }\n}\n@-webkit-keyframes skillFour {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 80%;\n  }\n}\n@-moz-keyframes skillFour {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 80%;\n  }\n}\n@-o-keyframes skillFour {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 80%;\n  }\n}\n@keyframes skillFive {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 100%;\n  }\n}\n@-webkit-keyframes skillFive {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 100%;\n  }\n}\n@-moz-keyframes skillFive {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 100%;\n  }\n}\n@-o-keyframes skillFive {\n  from {\n    width: 0%;\n  }\n  to {\n    width: 100%;\n  }\n}")
 ;(function(){
 'use strict';
 
@@ -6446,7 +6446,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('ul',{staticClass:"row"},[_vm._m(0),_vm._v(" "),_vm._l((_vm.skills),function(item){return _c('li',{staticClass:"col-xs-12"},[_c('p',{staticClass:"col-xs-3"},[_vm._v(_vm._s(item.type))]),_vm._v(" "),_c('div',{staticClass:"col-xs-9"},[_vm._v(_vm._s(item.value))])])})],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('ul',{staticClass:"row"},[_vm._m(0),_vm._v(" "),_vm._l((_vm.skills),function(item){return _c('li',{staticClass:"col-xs-12"},[_c('p',{staticClass:"col-xs-3"},[_vm._v(_vm._s(item.type))]),_vm._v(" "),_c('div',{staticClass:"col-xs-9"},[_c('div',{staticClass:"progression",class:item.value})])])})],2)}
 __vue__options__.staticRenderFns = [function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._c;return _c('li',{staticClass:"col-xs-12"},[_c('strong',{staticClass:"col-xs-3"},[_vm._v("Tecnologie utilizzate")]),_c('strong',{staticClass:"col-xs-9"},[_vm._v("Impatto")])])}]
 __vue__options__._scopeId = "data-v-08bc2bcf"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
@@ -6537,8 +6537,10 @@ exports.default = {
       $(e.currentTarget).siblings().removeClass("open").find(".content-toggle").slideUp();
       if ($(e.currentTarget).hasClass("open")) {
         $(e.currentTarget).removeClass("open").find(".content-toggle").slideUp();
+        $(e.currentTarget).find("ul").removeClass("open");
       } else {
         $(e.currentTarget).addClass("open").find(".content-toggle").slideDown();
+        $(e.currentTarget).find("ul").addClass("open");
       }
     }
   },
@@ -6556,16 +6558,16 @@ exports.default = {
         imgLink: '/project.io/static/img/logo.svg',
         skills: [{
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "two"
         }, {
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "five"
         }]
       }, {
         title: "due",
@@ -6574,16 +6576,16 @@ exports.default = {
         img: false,
         skills: [{
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "two"
         }, {
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "five"
         }]
       }, {
         title: "tre",
@@ -6592,16 +6594,16 @@ exports.default = {
         img: false,
         skills: [{
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "two"
         }, {
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "five"
         }]
       }, {
         title: "quattro",
@@ -6610,16 +6612,16 @@ exports.default = {
         img: false,
         skills: [{
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "two"
         }, {
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "five"
         }]
       }, {
         title: "cique",
@@ -6628,16 +6630,16 @@ exports.default = {
         img: false,
         skills: [{
           type: "css",
-          value: 3
+          value: "five"
         }, {
           type: "css",
-          value: 3
+          value: "two"
         }, {
           type: "css",
-          value: 3
+          value: "one"
         }, {
           type: "css",
-          value: 3
+          value: "five"
         }]
       }]
     };

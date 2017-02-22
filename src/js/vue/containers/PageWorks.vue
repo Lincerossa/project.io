@@ -24,8 +24,10 @@ export default {
       $(e.currentTarget).siblings().removeClass("open").find(".content-toggle").slideUp();
       if($(e.currentTarget).hasClass("open")){
         $(e.currentTarget).removeClass("open").find(".content-toggle").slideUp();
+        $(e.currentTarget).find("ul").removeClass("open")
       }else{
         $(e.currentTarget).addClass("open").find(".content-toggle").slideDown();
+        $(e.currentTarget).find("ul").addClass("open")
       }   
     }
   },
@@ -45,20 +47,20 @@ export default {
           skills:[
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
+              value:"two"
             },
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
-            },
+              value:"five"
+            }
           ]
 	  		},
 	  		{
@@ -69,20 +71,20 @@ export default {
           skills:[
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
+              value:"two"
             },
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
-            },
+              value:"five"
+            }
           ]
 	  	  },
 	  		{
@@ -93,20 +95,20 @@ export default {
           skills:[
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
+              value:"two"
             },
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
-            },
+              value:"five"
+            }
           ]
 	  	  },
 	  		{
@@ -117,19 +119,19 @@ export default {
           skills:[
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
+              value:"two"
             },
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
+              value:"five"
             }
           ]
 	  		},
@@ -141,20 +143,20 @@ export default {
           skills:[
             {
               type:"css",
-              value:3
+              value:"five"
             },
             {
               type:"css",
-              value:3
+              value:"two"
             },
             {
               type:"css",
-              value:3
+              value:"one"
             },
             {
               type:"css",
-              value:3
-            },
+              value:"five"
+            }
           ]
 	  		}
   		]
